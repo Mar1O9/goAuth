@@ -6,6 +6,14 @@ A boilerplate backend application that uses gin and gorm to implements Jwt & OAu
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+
+## Requirements
+
+* `.env` file containing the following properties:
+  - `PORT`
+  - `APP_ENV`
+  - `DATABASE_URL`
+
 ## MakeFile
 
 Run build make command with tests
