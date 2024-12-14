@@ -1,61 +1,37 @@
-# Project GoAuth
+<p align="center"><img src="https://socialify.git.ci/Maro1O9/goophy/image?font=Inter&amp;forks=1&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Plus&amp;stargazers=1&amp;theme=Dark" alt="project-image"></p>
 
-A boilerplate backend application that uses gin and gorm to implements Jwt & OAuth authentication with a sql database 
+<p id="description">a simple jwt based authentication system you can use it as a boilerplate for a new project or as authentication service</p>
 
-## Getting Started
+  
+  
+<h2>🧐 Features</h2>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Here're some of the project's best features:
 
+*   the project provide a robust jwt auth system
 
-## Requirements
+<h2>🛠️ Installation Steps:</h2>
 
-* `.env` file containing the following properties:
-  - `PORT`
-  - `APP_ENV`
-  - `DATABASE_URL`
+<p>1. installtion</p>
 
-## MakeFile
-
-Run build make command with tests
-```bash
-make all
+```
+git clone https://github.com/Maro1O9/goopy.git
 ```
 
-Build the application
-```bash
-make build
+<p>2. open workspace</p>
+
+```
+cd goophy
 ```
 
-Run the application
-```bash
-make run
+<p>3. env setup</p>
+
 ```
-Create DB container
-```bash
-make docker-run
+create a .env file with PORT APP_ENV DATABASE_URL and SECRET_KEY variables 
 ```
 
-Shutdown DB Container
-```bash
-make docker-down
-```
+<h2>🍰 Contribution Guidelines:</h2>
 
-DB Integrations Test:
-```bash
-make itest
-```
+<h2>🛡️ License:</h2>
 
-Live reload the application:
-```bash
-make watch
-```
-
-Run the test suite:
-```bash
-make test
-```
-
-Clean up binary from the last build:
-```bash
-make clean
-```
+This project is licensed under the Apache 2.0
