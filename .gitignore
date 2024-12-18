@@ -34,3 +34,6 @@ main
 
 # sqlite Debug db file
 *.db
+
+# log folder
+logs/** 
