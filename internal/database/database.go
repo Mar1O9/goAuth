@@ -51,7 +51,7 @@ func Create(model interface{}, obj interface{}) error {
 // Update updates existing records in the database that match the provided query.
 // It takes a model, an object with the updated fields, a query, and arguments for the query.
 // Returns an error if the update operation fails.
-func Update(model interface{}, obj, query, args interface{}) error {
+func Update(model interface{}, obj, query interface{}, args ...interface{}) error {
 	if DB == nil {
 		return errors.New("database connection not established")
 	}
