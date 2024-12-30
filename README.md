@@ -12,7 +12,7 @@ Here're some of the project's best features:
 
 *   GoAuth provides a robust jwt auth system
 
-  
+<h2>⚠️Still under development ⚠️</h2>  
   
 <h2>💻 Built with</h2>
 
