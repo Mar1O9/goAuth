@@ -22,13 +22,15 @@ func (s *Server) RegisterRoutes() http.Handler {
 		AllowHeaders:     []string{"Accept", "Authorization", "Content-Type"},
 		AllowCredentials: true, // Enable cookies/auth
 	}))
+	auth := r.RouterGroup.Group("/auth")
 
+	auth.POST("/signup", s.SignUp)
+	auth.POST("/login", s.Login)
 
 	r.GET("/websocket", s.websocketHandler)
 
 	return r
 }
-
 
 func (s *Server) websocketHandler(c *gin.Context) {
 	w := c.Writer

@@ -7,6 +7,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/Maro1O9/goauth/internal/database"
+	"github.com/Maro1O9/goauth/internal/database/models"
 	_ "github.com/joho/godotenv/autoload"
 )
 
@@ -15,6 +17,7 @@ type Server struct {
 }
 
 func NewServer() *http.Server {
+	database.MakeDb(&models.User{})
 	port, _ := strconv.Atoi(os.Getenv("PORT"))
 	NewServer := &Server{
 		port: port,
