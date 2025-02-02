@@ -22,8 +22,7 @@ func (s *Server) RegisterRoutes() http.Handler {
 		AllowHeaders:     []string{"Accept", "Authorization", "Content-Type"},
 		AllowCredentials: true, // Enable cookies/auth
 	}))
-	auth := r.RouterGroup.Group("/auth")
-
+	auth := r.Group("/auth")
 	auth.POST("/signup", s.SignUp)
 	auth.POST("/login", s.Login)
 

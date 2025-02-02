@@ -6,9 +6,62 @@ import (
 	"regexp"
 	"time"
 
+	"github.com/Maro1O9/goauth/internal/inputs"
 	"github.com/dlclark/regexp2"
 	"github.com/golang-jwt/jwt/v5"
 )
+
+// ValidateSignupData compins all the input validation
+// in on function
+func ValidateSignupData(user *inputs.InputUser) error {
+
+	// Validate username
+	if err := ValidateUsername(user.Username); err != nil {
+		return err
+	}
+
+	// Validate name
+	if err := ValidateName(user.Name); err != nil {
+		return err
+	}
+
+	// Validate email
+	if err := ValidateEmail(user.Email); err != nil {
+		return err
+	}
+
+	// Validate password
+	if err := ValidatePassword(user.Password); err != nil {
+		return err
+	}
+
+	// Validate confirm password
+	if err := ValidatePassword(user.ConfirmPassword); err != nil {
+		return err
+	}
+
+	// Check if passwords match
+	if user.Password != user.ConfirmPassword {
+		return errors.New("Passwords do not match")
+	}
+	return nil
+}
+
+// ValidateLoginData compins all the input validation
+// in on function
+func ValidateLoginData(user *inputs.LoginUser) error {
+
+	// Validate email format
+	if err := ValidateEmail(user.Email); err != nil {
+		return err
+	}
+
+	// Validate password format
+	if err := ValidatePassword(user.Password); err != nil {
+		return err
+	}
+	return nil
+}
 
 // ValidateUsername checks if the provided Username is valid.
 // The Username must be between 3 and 32 characters long and may contain
